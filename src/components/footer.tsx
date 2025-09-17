@@ -7,7 +7,7 @@ export function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/nealanderson",
+      href: "https://github.com/cleverIdeaz",
       icon: Github,
     },
     {
@@ -17,7 +17,7 @@ export function Footer() {
     },
     {
       name: "Email",
-      href: "mailto:neal@nealanderson.tech",
+      href: "mailto:neal.anderson.tech@gmail.com",
       icon: Mail,
     },
   ];

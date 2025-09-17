@@ -7,7 +7,7 @@ export function About() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/nealanderson",
+      href: "https://github.com/cleverIdeaz",
       icon: Github,
     },
     {

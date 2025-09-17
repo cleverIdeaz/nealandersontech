@@ -9,13 +9,15 @@ const projects = [
     description: "My startup platform featuring a collection of creative tools and applications. A hub for innovative digital experiences and creative technology solutions.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     demo: "https://phewsh.com",
+    github: "https://github.com/cleverIdeaz",
     featured: true,
   },
   {
     title: "KeyLink",
     description: "Secure password manager with end-to-end encryption and cross-platform synchronization. Part of the Phewsh ecosystem of productivity tools.",
-    tech: ["React", "Node.js", "WebCrypto API", "Electron"],
+    tech: ["Python", "WebCrypto API", "Cross-platform"],
     demo: "https://phewsh.com/keylink",
+    github: "https://github.com/cleverIdeaz/KeyLink",
     featured: true,
   },
   {
@@ -23,6 +25,7 @@ const projects = [
     description: "Beautiful recipe sharing platform with AI-powered ingredient suggestions and meal planning features. Designed for food enthusiasts and home cooks.",
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
     demo: "https://phewsh.com/recipeflower",
+    github: "https://github.com/cleverIdeaz",
     featured: true,
   },
   {
@@ -30,6 +33,7 @@ const projects = [
     description: "Interactive audio-visual platform combining music technology with creative coding. Built for immersive experiences and artistic expression.",
     tech: ["Max/MSP", "WebGL", "Web Audio API", "Arduino"],
     demo: "https://phewsh.com/sensory-stack",
+    github: "https://github.com/cleverIdeaz",
     featured: false,
   },
   {
@@ -37,6 +41,7 @@ const projects = [
     description: "Client project: Wellness platform for holistic health and wellness services. Clean, modern design focused on user experience and accessibility.",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
     demo: "https://wholemommawellness.com",
+    github: "https://github.com/cleverIdeaz",
     featured: false,
   },
   {
@@ -44,6 +49,7 @@ const projects = [
     description: "Personal project: Curated bookmarking platform for discovering and organizing interesting content across the web. Built for knowledge management.",
     tech: ["Vue.js", "Express.js", "PostgreSQL", "Redis"],
     demo: "https://bookmarksthespot.com",
+    github: "https://github.com/cleverIdeaz",
     featured: false,
   },
 ];
@@ -119,16 +125,28 @@ export function Projects() {
                   ))}
                 </div>
                 
-                <motion.a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
-                  whileHover={{ x: 5 }}
-                >
-                  <span className="mr-2">View Project</span>
-                  <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
+                <div className="flex space-x-4">
+                  <motion.a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="mr-2">View Project</span>
+                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="mr-2">GitHub</span>
+                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           ))}
