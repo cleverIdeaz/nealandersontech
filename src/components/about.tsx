@@ -17,28 +17,15 @@ export function About() {
     },
     {
       name: "Email",
-      href: "mailto:neal@nealanderson.tech",
+      href: "mailto:neal.anderson.tech@gmail.com",
       icon: Mail,
     },
   ];
 
   return (
-    <section id="about" className="py-20 px-6 lg:px-8">
+    <section id="about" className="py-24 px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -46,17 +33,15 @@ export function About() {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <div className="w-72 h-72 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                  <div className="w-64 h-64 bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center">
-                    <span className="text-4xl font-bold text-gray-600 dark:text-gray-400">
+              <div className="w-96 h-96 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center">
+                <div className="w-80 h-80 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-64 h-64 bg-gray-50 dark:bg-gray-600 rounded-lg flex items-center justify-center">
+                    <span className="text-6xl font-light text-gray-400 dark:text-gray-300">
                       NA
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full animate-pulse delay-1000"></div>
             </div>
           </motion.div>
 
@@ -66,42 +51,63 @@ export function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Creative Technologist & Full-Stack Developer
-            </h3>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300">
-              <p>
-                I&apos;m a passionate developer who believes in the power of code to create 
-                meaningful experiences. With a background spanning from creative agencies 
-                to enterprise solutions, I bring a unique perspective to every project.
+            <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-8">
+              About
+            </h2>
+            
+            <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg">
+                I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
+                With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
+                to enterprise IT solutions, I bring a multidisciplinary approach to every project.
               </p>
+              
               <p>
-                My journey in tech started with curiosity and has evolved into a deep 
-                love for building things that matter. I specialize in modern web technologies, 
-                cloud architecture, and creating seamless user experiences that delight.
+                My work sits at the intersection of music, art, and technology. From developing interactive 
+                audio systems for museums to building web applications for startups, I love creating 
+                experiences that engage and inspire.
               </p>
+              
               <p>
-                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing 
-                to open source projects, or sharing knowledge with the developer community.
+                When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
+                working on music production, or building interactive installations. I believe in the power 
+                of hands-on creation and the magic that happens when technology meets creativity.
               </p>
             </div>
 
+            <div className="mt-12">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-6">
+                Current Focus
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                  Web Development
+                </span>
+                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                  Interactive Design
+                </span>
+                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                  Audio Technology
+                </span>
+                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                  IoT & Hardware
+                </span>
+              </div>
+            </div>
+
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Let&apos;s Connect
-              </h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-6">
                 {socialLinks.map((link) => (
                   <motion.a
                     key={link.name}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <link.icon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                    <link.icon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
                     <span className="sr-only">{link.name}</span>
                   </motion.a>
                 ))}

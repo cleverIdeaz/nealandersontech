@@ -5,157 +5,169 @@ import { MapPin } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior Full-Stack Developer",
+    title: "Senior Project Coordinator / Senior Service Technician",
     company: "Insight Direct",
     location: "Remote",
-    period: "2022 - Present",
-    description: "Leading development of enterprise-scale applications using modern web technologies. Mentoring junior developers and architecting cloud-native solutions.",
+    period: "Sep 2021 - Current",
+    description: "Managing mapping, scheduling, scope, and deliverables for multi-site assessments and deployments. Serving as primary liaison between clients, installers, and internal teams.",
     achievements: [
-      "Architected microservices infrastructure serving 100k+ users",
-      "Reduced application load time by 40% through performance optimization",
-      "Led team of 5 developers in agile environment",
-      "Implemented CI/CD pipelines reducing deployment time by 60%"
+      "Ensured on-time, on-budget execution with regular client updates",
+      "Developed training tools (Power Apps, Figma guides, videos) for streamlined onboarding",
+      "Delivered advanced technical support for IT infrastructure across franchise locations",
+      "Maintained project momentum and mitigated risks through effective communication"
     ],
-    tech: ["React", "Node.js", "AWS", "Docker", "Kubernetes", "PostgreSQL"]
+    tech: ["Power Apps", "Figma", "IT Infrastructure", "Project Management", "Client Relations"]
   },
   {
-    title: "Creative Technologist",
+    title: "Art Preparator & AV Technician",
     company: "Newfields",
     location: "Indianapolis, IN",
-    period: "2020 - 2022",
-    description: "Developed interactive digital experiences for museum exhibitions and educational programs. Bridged the gap between art and technology.",
+    period: "Jan 2020 - Oct 2021",
+    description: "Installed high-profile art pieces, programmed AV automation schedules, and configured projection mapping experiences for museum exhibitions.",
     achievements: [
-      "Created immersive AR experiences for art exhibitions",
-      "Built interactive learning platforms for 50k+ visitors annually",
-      "Collaborated with artists and curators on digital installations",
-      "Developed mobile app with 4.8/5 App Store rating"
+      "Developed touch-free audio playback system during COVID-19 outbreak",
+      "Enhanced visitor experience while minimizing touch points",
+      "Seamlessly executed museum exhibitions with technical precision",
+      "Collaborated with curators on interactive installations"
     ],
-    tech: ["React Native", "Three.js", "WebGL", "ARCore", "Firebase", "Unity"]
+    tech: ["Projection Mapping", "AV Automation", "MadMapper", "Audio Systems", "Interactive Design"]
   },
   {
-    title: "Frontend Developer",
+    title: "Technical Support Installer",
     company: "Creative Works",
     location: "Indianapolis, IN",
-    period: "2018 - 2020",
-    description: "Specialized in creating beautiful, responsive web applications for creative agencies and small businesses. Focus on user experience and modern design.",
+    period: "May 2018 - Dec 2019",
+    description: "Installed arcade virtual reality client/server systems and conducted low-voltage component installations for laser tag and mini-golf courses.",
     achievements: [
-      "Delivered 20+ client projects with 100% satisfaction rate",
-      "Increased client website conversion rates by 35% on average",
-      "Established design system used across all client projects",
-      "Mentored 2 junior developers"
+      "Custom sound design and lighting design for immersive experiences",
+      "Ensured smooth operations and customer satisfaction",
+      "Delivered engaging laser tag course experiences",
+      "Maintained complex VR and gaming systems"
     ],
-    tech: ["Vue.js", "Sass", "Webpack", "Figma", "WordPress", "Shopify"]
+    tech: ["VR Systems", "Low Voltage", "Sound Design", "Lighting Design", "Customer Service"]
   },
   {
-    title: "Junior Web Developer",
-    company: "TechStart Solutions",
-    location: "Indianapolis, IN",
-    period: "2017 - 2018",
-    description: "Started my professional journey building websites and web applications for local businesses. Learned the fundamentals of web development and client relations.",
+    title: "Freelance Content Provider, QA Test Engineer",
+    company: "Retronyms LLC",
+    location: "Remote",
+    period: "Aug 2015 - Aug 2020",
+    description: "Created reproducible bug reports as QA test engineer and acted as metadata editor for original and third-party content.",
     achievements: [
-      "Built 15+ responsive websites from scratch",
-      "Learned modern JavaScript frameworks and tools",
-      "Gained experience with version control and deployment",
-      "Developed strong problem-solving and communication skills"
+      "Contributed to improving software quality and user experience",
+      "Formatted audio loops to grow content library",
+      "Liaised between original and third-party content creators",
+      "Maintained high standards for audio content quality"
     ],
-    tech: ["HTML", "CSS", "JavaScript", "jQuery", "PHP", "MySQL"]
+    tech: ["QA Testing", "Audio Production", "Content Management", "Bug Reporting", "Metadata"]
+  },
+  {
+    title: "Freelance Technician, Programmer",
+    company: "White Tree Creative Group",
+    location: "Various US Locations",
+    period: "Feb 2018 - Sep 2018",
+    description: "Developed interactive software using Max (MSP), MadMapper, Arduino, and other peripherals for music festivals across the U.S.",
+    achievements: [
+      "Deployed interactive installations at 10+ music festivals",
+      "Elevated festival experience for thousands of attendees",
+      "Integrated multiple technologies for seamless experiences",
+      "Created custom solutions for unique festival requirements"
+    ],
+    tech: ["Max/MSP", "MadMapper", "Arduino", "Twilio SMS", "Interactive Design"]
+  },
+  {
+    title: "Graduate Research Assistant",
+    company: "IUPUI",
+    location: "Indianapolis, IN",
+    period: "Aug 2015 - May 2017",
+    description: "Conducted research and development of auto accompaniment and audio spatialization systems, resulting in published works and conference presentations.",
+    achievements: [
+      "Published 3 research works in international conferences",
+      "Presented at NIME and ICMC conferences",
+      "Developed innovative audio spatialization techniques",
+      "Contributed to academic research in music technology"
+    ],
+    tech: ["Research", "Audio Spatialization", "Music Technology", "Academic Writing", "Conference Presentations"]
   }
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 px-6 lg:px-8">
+    <section id="experience" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Work Experience
+          <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-8">
+            Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            A journey through creative technology, from academic research to enterprise solutions
+          </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
-
-                {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${
-                  index % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                }`}>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                        {exp.title}
-                      </h3>
-                      <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-                        {exp.period}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center text-gray-600 dark:text-gray-300 mb-3">
-                      <span className="font-semibold text-blue-600 dark:text-blue-400">
-                        {exp.company}
-                      </span>
-                      <span className="mx-2">•</span>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {exp.location}
-                      </div>
-                    </div>
-
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      {exp.description}
-                    </p>
-
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                        Key Achievements:
-                      </h4>
-                      <ul className="space-y-1">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
-                            <span className="text-blue-500 mr-2">•</span>
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                <div className="flex-1">
+                  <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                    {exp.title}
+                  </h3>
+                  <div className="flex items-center text-gray-600 dark:text-gray-400 mb-2">
+                    <span className="font-medium">{exp.company}</span>
+                    <span className="mx-2">•</span>
+                    <div className="flex items-center">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {exp.location}
                     </div>
                   </div>
+                  <span className="text-sm text-gray-500 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                    {exp.period}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                {exp.description}
+              </p>
+
+              <div className="mb-6">
+                <h4 className="font-medium text-gray-900 dark:text-white mb-3">
+                  Key Achievements
+                </h4>
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                      <span className="text-gray-400 mr-3 mt-1">•</span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

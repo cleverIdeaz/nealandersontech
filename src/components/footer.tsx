@@ -35,7 +35,7 @@ export function Footer() {
           >
             <h3 className="text-2xl font-bold mb-4">Neal Anderson</h3>
             <p className="text-gray-400 mb-6">
-              Vibe Coder | Full-Stack Builder | Creative Technologist
+              Musician • Maker • Builder
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
@@ -93,9 +93,9 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-2 text-gray-400">
-              <p>neal@nealanderson.tech</p>
+              <p>neal.anderson.tech@gmail.com</p>
+              <p>317.646.1975</p>
               <p>Indianapolis, IN</p>
-              <p>Available for projects</p>
             </div>
           </motion.div>
         </div>
