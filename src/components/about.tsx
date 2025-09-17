@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function About() {
   const socialLinks = [
@@ -33,14 +34,15 @@ export function About() {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <div className="w-96 h-96 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center">
-                <div className="w-80 h-80 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center shadow-lg">
-                  <div className="w-64 h-64 bg-gray-50 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                    <span className="text-6xl font-light text-gray-400 dark:text-gray-300">
-                      NA
-                    </span>
-                  </div>
-                </div>
+              <div className="w-96 h-96 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/headshot.jpg"
+                  alt="Neal Anderson - Creative Technologist"
+                  width={384}
+                  height={384}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
           </motion.div>

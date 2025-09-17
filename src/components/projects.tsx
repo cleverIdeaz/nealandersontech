@@ -73,7 +73,7 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -81,72 +81,58 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative ${
-                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } flex flex-col lg:flex items-center gap-12`}
+              className="group bg-white dark:bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700"
+              whileHover={{ y: -5 }}
             >
-              <div className="flex-1">
-                <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl font-light text-gray-500 dark:text-gray-400">
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">Project Preview</span>
-                  </div>
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                {project.featured && (
+                  <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs rounded-full font-medium">
+                    Featured
+                  </span>
+                )}
               </div>
               
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="text-2xl font-light text-gray-900 dark:text-white">
-                    {project.title}
-                  </h3>
-                  {project.featured && (
-                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full">
-                      Featured
-                    </span>
-                  )}
-                </div>
-                
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex space-x-4">
-                  <motion.a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors group"
-                    whileHover={{ x: 5 }}
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full"
                   >
-                    <span className="mr-2">View Project</span>
-                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">GitHub</span>
-                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                </div>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="flex space-x-4">
+                <motion.a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="mr-2">View Project</span>
+                  <ExternalLink className="h-4 w-4" />
+                </motion.a>
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="mr-2">GitHub</span>
+                  <ExternalLink className="h-4 w-4" />
+                </motion.a>
               </div>
             </motion.div>
           ))}
