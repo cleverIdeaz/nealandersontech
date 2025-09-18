@@ -46,34 +46,30 @@ export function MainLayout() {
       {/* Hero Section - Always visible */}
       <Hero />
       
-      {/* Tab Navigation */}
-      <div className="sticky top-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-6xl mx-auto px-6">
-          <nav className="flex justify-center space-x-2 py-3">
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeTab === tab.id
-                      ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span className="hidden sm:inline">{tab.label}</span>
-                </button>
-              );
-            })}
-          </nav>
+      {/* Simple Navigation */}
+      <div className="max-w-6xl mx-auto px-8 py-8">
+        <nav className="flex flex-wrap gap-8 mb-12">
+          {tabs.map((tab) => {
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`text-lg font-serif transition-colors ${
+                  activeTab === tab.id
+                    ? "text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white pb-1"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </nav>
+        
+        {/* Content */}
+        <div>
+          {renderContent()}
         </div>
-      </div>
-      
-      {/* Tab Content */}
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        {renderContent()}
       </div>
     </div>
   );
