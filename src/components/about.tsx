@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export function About() {
@@ -23,97 +22,77 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              <div className="w-96 h-96 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center">
-                <div className="w-80 h-80 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center shadow-lg">
-                  <div className="w-64 h-64 bg-gray-50 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                    <span className="text-6xl font-light text-gray-400 dark:text-gray-300">
-                      NA
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+    <section id="about" className="py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div className="w-80 h-80 mx-auto bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center">
+            <span className="text-6xl font-light text-gray-400 dark:text-gray-300">
+              NA
+            </span>
+          </div>
+        </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-12 leading-tight">
-              About
-            </h2>
+        <div>
+          <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-8">
+            About
+          </h2>
+          
+          <div className="space-y-6 text-gray-600 dark:text-gray-300">
+            <p>
+              I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
+              With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
+              to enterprise IT solutions, I bring a multidisciplinary approach to every project.
+            </p>
             
-            <div className="space-y-8 text-gray-600 dark:text-gray-300 leading-relaxed">
-              <p className="text-lg leading-relaxed">
-                I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
-                With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
-                to enterprise IT solutions, I bring a multidisciplinary approach to every project.
-              </p>
-              
-              <p className="leading-relaxed">
-                My work sits at the intersection of music, art, and technology. From developing interactive 
-                audio systems for museums to building web applications for startups, I love creating 
-                experiences that engage and inspire.
-              </p>
-              
-              <p className="leading-relaxed">
-                When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
-                working on music production, or building interactive installations. I believe in the power 
-                of hands-on creation and the magic that happens when technology meets creativity.
-              </p>
-            </div>
+            <p>
+              My work sits at the intersection of music, art, and technology. From developing interactive 
+              audio systems for museums to building web applications for startups, I love creating 
+              experiences that engage and inspire.
+            </p>
+            
+            <p>
+              When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
+              working on music production, or building interactive installations. I believe in the power 
+              of hands-on creation and the magic that happens when technology meets creativity.
+            </p>
+          </div>
 
-            <div className="mt-12">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-6">
-                Current Focus
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                  Web Development
-                </span>
-                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                  Interactive Design
-                </span>
-                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                  Audio Technology
-                </span>
-                <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                  IoT & Hardware
-                </span>
-              </div>
+          <div className="mt-8">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
+              Current Focus
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                Web Development
+              </span>
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                Interactive Design
+              </span>
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                Audio Technology
+              </span>
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                IoT & Hardware
+              </span>
             </div>
+          </div>
 
-            <div className="mt-8">
-              <div className="flex space-x-6">
-                {socialLinks.map((link) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <link.icon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
-                    <span className="sr-only">{link.name}</span>
-                  </motion.a>
-                ))}
-              </div>
+          <div className="mt-8">
+            <div className="flex space-x-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <link.icon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                  <span className="sr-only">{link.name}</span>
+                </a>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

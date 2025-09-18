@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { User, Briefcase, Code, FileText, MessageCircle } from "lucide-react";
 import { Hero } from "./hero";
 import { About } from "./about";
@@ -44,19 +43,22 @@ export function MainLayout() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Tab Navigation - Fixed at top */}
-      <div className="fixed top-16 left-0 right-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <nav className="flex justify-center space-x-3 overflow-x-auto py-6">
+      {/* Hero Section - Always visible */}
+      <Hero />
+      
+      {/* Tab Navigation */}
+      <div className="sticky top-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-6">
+          <nav className="flex justify-center space-x-2 py-4">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-3 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     activeTab === tab.id
-                      ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg"
+                      ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
@@ -68,24 +70,10 @@ export function MainLayout() {
           </nav>
         </div>
       </div>
-
-      {/* Hero Section - Always visible */}
-      <Hero />
       
       {/* Tab Content */}
-      <div className="relative pt-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full"
-          >
-            {renderContent()}
-          </motion.div>
-        </AnimatePresence>
+      <div className="max-w-6xl mx-auto px-6">
+        {renderContent()}
       </div>
     </div>
   );
