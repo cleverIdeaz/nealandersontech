@@ -5,9 +5,9 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "KeyLink Demo",
-    description: "Interactive web application showcasing KeyLink's capabilities. Features a clean, intuitive interface for demonstrating app functionality and user experience.",
-    tech: ["Web App", "Demo Interface", "Netlify"],
+    title: "KeyLink",
+    description: "Zero-config music data sync for Max, browser, and more. Seamlessly synchronizes music data across different platforms and environments with minimal setup required.",
+    tech: ["Max/MSP", "Web Audio API", "Data Sync", "Netlify"],
     demo: "https://key-link.netlify.app/",
     github: "https://github.com/cleverIdeaz/KeyLink",
     featured: true,
@@ -57,17 +57,17 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white dark:bg-gray-800 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700"
-              whileHover={{ y: -5 }}
-            >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group bg-white dark:bg-gray-800 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">
                   {project.title}
