@@ -24,11 +24,11 @@ export function About() {
   return (
     <section id="about">
       <div className="max-w-4xl">
-        <h2 className="text-3xl font-serif text-gray-900 dark:text-white mb-8">
+        <h2 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">
           About
         </h2>
         
-        <div className="space-y-6 text-lg font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+        <div className="space-y-4 text-lg font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
           <p>
             I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
             With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
@@ -48,27 +48,27 @@ export function About() {
           </p>
         </div>
 
-        <div className="mt-12">
-          <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-6">
+        <div className="mt-8">
+          <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-4">
             Current Focus
           </h3>
-          <div className="flex flex-wrap gap-4">
-            <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
+          <div className="flex flex-wrap gap-3">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
               Web Development
             </span>
-            <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
               Interactive Design
             </span>
-            <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
               Audio Technology
             </span>
-            <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
               IoT & Hardware
             </span>
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-8">
           <div className="flex space-x-6">
             {socialLinks.map((link) => (
               <a

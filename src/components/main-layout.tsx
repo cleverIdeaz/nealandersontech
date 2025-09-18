@@ -47,8 +47,8 @@ export function MainLayout() {
       <Hero />
       
       {/* Simple Navigation */}
-      <div className="max-w-6xl mx-auto px-8 py-8">
-        <nav className="flex flex-wrap gap-8 mb-12">
+      <div className="max-w-6xl mx-auto px-8">
+        <nav className="flex flex-wrap gap-8 mb-8">
           {tabs.map((tab) => {
             return (
               <button
@@ -67,7 +67,7 @@ export function MainLayout() {
         </nav>
         
         {/* Content */}
-        <div>
+        <div className="pb-12">
           {renderContent()}
         </div>
       </div>
