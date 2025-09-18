@@ -24,16 +24,16 @@ const publications = [
     abstract: "Research on sound localization techniques for irregular speaker array configurations, exploring methods for accurate spatial audio positioning in non-standard setups.",
     featured: true
   },
-  {
-    title: "KeyLink: A Real-Time Music Data Synchronization Framework for Networked Music Performance",
-    authors: "Neal Anderson",
-    venue: "Academic Paper",
-    location: "2016",
-    year: "2016", 
-    link: "https://www.academia.edu/143699200/KeyLink_A_Real_Time_Music_Data_Synchronization_Framework_for_Networked_Music_Performance",
-    abstract: "A framework for real-time music data synchronization across networked performance environments, enabling seamless collaboration between musicians in different locations.",
-    featured: false
-  }
+      {
+        title: "KeyLink: A Real-Time Music Data Synchronization Framework for Networked Music Performance",
+        authors: "Neal Anderson and Sanjay Majumder",
+        venue: "Academic Paper",
+        location: "2016",
+        year: "2016", 
+        link: "https://www.academia.edu/143699200/KeyLink_A_Real_Time_Music_Data_Synchronization_Framework_for_Networked_Music_Performance",
+        abstract: "A framework for real-time music data synchronization across networked performance environments, enabling seamless collaboration between musicians in different locations.",
+        featured: false
+      }
 ];
 
 const blogPosts = [
