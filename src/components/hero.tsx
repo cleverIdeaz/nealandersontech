@@ -12,25 +12,25 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 dark:text-white mb-8 tracking-tight">
-            Neal Anderson
-          </h1>
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 font-light"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Musician • Maker • Builder
-          </motion.p>
-          <motion.p
-            className="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Creative technologist crafting digital experiences at the intersection of music, art, and technology.
-          </motion.p>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 dark:text-white mb-12 tracking-tight leading-tight">
+                Neal Anderson
+              </h1>
+              <motion.p
+                className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 font-light leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Musician • Maker • Builder
+              </motion.p>
+              <motion.p
+                className="text-lg text-gray-500 dark:text-gray-500 mb-16 max-w-2xl mx-auto font-light leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Creative technologist crafting digital experiences at the intersection of music, art, and technology.
+              </motion.p>
         </motion.div>
 
         <motion.div

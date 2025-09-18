@@ -51,24 +51,24 @@ export function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-8">
+            <h2 className="text-4xl font-light text-gray-900 dark:text-white mb-12 leading-tight">
               About
             </h2>
             
-            <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
-              <p className="text-lg">
+            <div className="space-y-8 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg leading-relaxed">
                 I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
                 With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
                 to enterprise IT solutions, I bring a multidisciplinary approach to every project.
               </p>
               
-              <p>
+              <p className="leading-relaxed">
                 My work sits at the intersection of music, art, and technology. From developing interactive 
                 audio systems for museums to building web applications for startups, I love creating 
                 experiences that engage and inspire.
               </p>
               
-              <p>
+              <p className="leading-relaxed">
                 When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
                 working on music production, or building interactive installations. I believe in the power 
                 of hands-on creation and the magic that happens when technology meets creativity.
