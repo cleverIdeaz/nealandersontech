@@ -22,9 +22,31 @@ const tabs = [
 export function MainLayout() {
   const [activeTab, setActiveTab] = useState("about");
 
+  // Handle URL hash changes and initial load
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash && tabs.some(tab => tab.id === hash)) {
+        setActiveTab(hash);
+      }
+    };
+
+    // Check initial hash on load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  // Handle custom tab switch events from footer
   useEffect(() => {
     const handleTabSwitch = (event: CustomEvent) => {
       setActiveTab(event.detail);
+      // Update URL hash
+      window.history.pushState(null, '', `#${event.detail}`);
     };
 
     window.addEventListener('switchTab', handleTabSwitch as EventListener);
@@ -32,6 +54,12 @@ export function MainLayout() {
       window.removeEventListener('switchTab', handleTabSwitch as EventListener);
     };
   }, []);
+
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+    // Update URL hash
+    window.history.pushState(null, '', `#${tabId}`);
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -59,23 +87,23 @@ export function MainLayout() {
       
       {/* Simple Navigation */}
       <div className="max-w-6xl mx-auto px-8">
-        <nav className="flex flex-wrap gap-8 mb-8">
-          {tabs.map((tab) => {
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`text-lg font-serif transition-colors ${
-                  activeTab === tab.id
-                    ? "text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white pb-1"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
-        </nav>
+                <nav className="flex flex-wrap gap-8 mb-8">
+                  {tabs.map((tab) => {
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => handleTabClick(tab.id)}
+                        className={`text-lg font-serif transition-colors ${
+                          activeTab === tab.id
+                            ? "text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white pb-1"
+                            : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                        }`}
+                      >
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </nav>
         
         {/* Content */}
         <div className="pb-12">
