@@ -1,6 +1,7 @@
 "use client";
 
-import { MapPin } from "lucide-react";
+import { useState } from "react";
+import { MapPin, ChevronDown, ChevronUp } from "lucide-react";
 
 const experiences = [
   {
@@ -90,6 +91,18 @@ const experiences = [
 ];
 
 export function Experience() {
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+
+  const toggleExpanded = (index: number) => {
+    const newExpanded = new Set(expandedItems);
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index);
+    } else {
+      newExpanded.add(index);
+    }
+    setExpandedItems(newExpanded);
+  };
+
   return (
     <section id="experience">
       <div className="max-w-4xl">
@@ -100,61 +113,83 @@ export function Experience() {
           A journey through creative technology, from academic research to enterprise solutions
         </p>
 
-        <div className="space-y-6">
-          {experiences.map((exp) => (
-            <div
-              key={exp.title}
-              className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-2">
-                    {exp.title}
-                  </h3>
-                  <div className="flex items-center text-gray-600 dark:text-gray-400 mb-2">
-                    <span className="font-medium">{exp.company}</span>
-                    <span className="mx-2">•</span>
-                    <div className="flex items-center">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {exp.location}
+        <div className="space-y-4">
+          {experiences.map((exp, index) => {
+            const isExpanded = expandedItems.has(index);
+            return (
+              <div
+                key={exp.title}
+                className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleExpanded(index)}
+                  className="w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-1">
+                        {exp.title}
+                      </h3>
+                      <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
+                        <span className="font-medium">{exp.company}</span>
+                        <span className="mx-2">•</span>
+                        <div className="flex items-center">
+                          <MapPin className="h-3 w-3 mr-1" />
+                          {exp.location}
+                        </div>
+                        <span className="mx-2">•</span>
+                        <span className="text-gray-500 dark:text-gray-500">
+                          {exp.period}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="ml-4">
+                      {isExpanded ? (
+                        <ChevronUp className="h-5 w-5 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-gray-400" />
+                      )}
                     </div>
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
-                    {exp.period}
-                  </span>
-                </div>
-              </div>
+                </button>
 
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                {exp.description}
-              </p>
+                {isExpanded && (
+                  <div className="px-6 pb-6 border-t border-gray-200 dark:border-gray-700">
+                    <div className="pt-4">
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                        {exp.description}
+                      </p>
 
-              <div className="mb-4">
-                <h4 className="font-medium text-gray-900 dark:text-white mb-2">
-                  Key Achievements
-                </h4>
-                <ul className="space-y-1">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
-                      <span className="text-gray-400 mr-2 mt-1">•</span>
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      <div className="mb-4">
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                          Key Achievements
+                        </h4>
+                        <ul className="space-y-1">
+                          {exp.achievements.map((achievement, i) => (
+                            <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                              <span className="text-gray-400 mr-2 mt-1">•</span>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-              <div className="flex flex-wrap gap-2">
-                {exp.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

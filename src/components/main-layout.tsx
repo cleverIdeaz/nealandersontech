@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { User, Briefcase, Code, FileText, MessageCircle } from "lucide-react";
 import { Hero } from "./hero";
 import { About } from "./about";
@@ -21,6 +21,17 @@ const tabs = [
 
 export function MainLayout() {
   const [activeTab, setActiveTab] = useState("about");
+
+  useEffect(() => {
+    const handleTabSwitch = (event: CustomEvent) => {
+      setActiveTab(event.detail);
+    };
+
+    window.addEventListener('switchTab', handleTabSwitch as EventListener);
+    return () => {
+      window.removeEventListener('switchTab', handleTabSwitch as EventListener);
+    };
+  }, []);
 
   const renderContent = () => {
     switch (activeTab) {

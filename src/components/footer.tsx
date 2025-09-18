@@ -65,20 +65,23 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { name: "About", href: "#about" },
-                { name: "Projects", href: "#projects" },
-                { name: "Experience", href: "#experience" },
-                { name: "Skills", href: "#skills" },
-                { name: "Blog", href: "#blog" },
-                { name: "Contact", href: "#contact" },
+                { name: "About", href: "#", tab: "about" },
+                { name: "Projects", href: "#", tab: "projects" },
+                { name: "Experience", href: "#", tab: "experience" },
+                { name: "Skills", href: "#", tab: "skills" },
+                { name: "Writing", href: "#", tab: "blog" },
+                { name: "Contact", href: "#", tab: "contact" },
               ].map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                  <button
+                    onClick={() => {
+                      // Dispatch custom event to switch tabs
+                      window.dispatchEvent(new CustomEvent('switchTab', { detail: link.tab }));
+                    }}
+                    className="text-gray-400 hover:text-white transition-colors text-left"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
