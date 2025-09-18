@@ -11,7 +11,7 @@ export function About() {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/nealanderson",
+      href: "https://www.linkedin.com/in/neal-anderson-tech/",
       icon: Linkedin,
     },
     {
