@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { User, Briefcase, Code, FileText, MessageCircle } from "lucide-react";
+import { User, Briefcase, Code, FileText, MessageCircle, Music } from "lucide-react";
 import { Hero } from "./hero";
 import { About } from "./about";
 import { Projects } from "./projects";
@@ -9,12 +9,14 @@ import { Experience } from "./experience";
 import { Skills } from "./skills";
 import { Blog } from "./blog";
 import { Contact } from "./contact";
+import { Music as MusicSection } from "./music";
 
 const tabs = [
   { id: "about", label: "About", icon: User },
   { id: "projects", label: "Projects", icon: Code },
   { id: "experience", label: "Experience", icon: Briefcase },
   { id: "skills", label: "Skills", icon: Code },
+  { id: "music", label: "Music", icon: Music },
   { id: "blog", label: "Writing", icon: FileText },
   { id: "contact", label: "Contact", icon: MessageCircle },
 ];
@@ -71,6 +73,8 @@ export function MainLayout() {
         return <Experience />;
       case "skills":
         return <Skills />;
+      case "music":
+        return <MusicSection />;
       case "blog":
         return <Blog />;
       case "contact":
@@ -86,7 +90,7 @@ export function MainLayout() {
       <Hero />
       
       {/* Simple Navigation */}
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-6xl mx-auto px-8 pt-4">
                 <nav className="flex flex-wrap gap-8 mb-8">
                   {tabs.map((tab) => {
                     return (

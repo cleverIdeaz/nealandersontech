@@ -29,6 +29,7 @@ export function Footer() {
     { name: "Projects", tab: "projects" },
     { name: "Experience", tab: "experience" },
     { name: "Skills", tab: "skills" },
+    { name: "Music", tab: "music" },
     { name: "Writing", tab: "blog" },
     { name: "Contact", tab: "contact" },
   ];
