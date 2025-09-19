@@ -1,6 +1,6 @@
 "use client";
 
-import { Music, ExternalLink, Play } from "lucide-react";
+import { Music as MusicIcon, ExternalLink, Play } from "lucide-react";
 
 const musicProjects = [
   {
@@ -8,7 +8,7 @@ const musicProjects = [
     description: "A collection of my musical experiments, electronic compositions, and creative audio projects. Features ambient soundscapes, experimental beats, and collaborative works.",
     platform: "SoundCloud",
     url: "https://soundcloud.com/nealium",
-    icon: Music,
+    icon: MusicIcon,
     featured: true,
   },
   {
