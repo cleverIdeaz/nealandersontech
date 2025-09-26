@@ -76,7 +76,7 @@ export function Music() {
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             My music production combines traditional composition techniques with modern technology. 
             I use tools like Max/MSP, Ableton Live, and various hardware synthesizers to create 
-            immersive audio experiences. Whether it's ambient soundscapes or narrative-driven 
+            immersive audio experiences. Whether it&apos;s ambient soundscapes or narrative-driven 
             compositions, each project explores new ways to connect technology with human emotion.
           </p>
         </div>
