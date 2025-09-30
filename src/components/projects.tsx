@@ -37,62 +37,60 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects">
-      <div className="max-w-4xl">
-        <h2 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">
-          Projects
-        </h2>
+    <section className="simple-card p-8">
+      <h2 className="text-3xl font-light text-white mb-8">
+        Projects
+      </h2>
 
-        <div className="space-y-8">
-          {projects.map((project) => (
-            <div key={project.title} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-2xl font-serif text-gray-900 dark:text-white">
-                  {project.title}
-                </h3>
-                {project.featured && (
-                  <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded">
-                    Featured
-                  </span>
-                )}
-              </div>
-
-              <p className="text-lg font-serif text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex space-x-6">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                >
-                  View Project →
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                >
-                  GitHub →
-                </a>
-              </div>
+      <div className="space-y-8">
+        {projects.map((project) => (
+          <div key={project.title} className="border-b border-white/10 pb-6 last:border-b-0">
+            <div className="flex items-start justify-between mb-4">
+              <h3 className="text-2xl font-light text-white">
+                {project.title}
+              </h3>
+              {project.featured && (
+                <span className="px-3 py-1 bg-white/10 text-white text-sm rounded-full border border-white/20">
+                  Featured
+                </span>
+              )}
             </div>
-          ))}
-        </div>
+
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-white/10 text-white text-sm rounded-full border border-white/20"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex space-x-6">
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                View Project →
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                GitHub →
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

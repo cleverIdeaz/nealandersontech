@@ -22,66 +22,68 @@ export function About() {
   ];
 
   return (
-    <section id="about">
-      <div className="max-w-4xl">
-        <h2 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">
-          About
-        </h2>
+    <section className="simple-card p-8">
+      <h2 className="text-3xl font-light text-white mb-6">
+        About
+      </h2>
+      
+      <div className="space-y-6 text-gray-300 leading-relaxed">
+        <p className="text-lg">
+          I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
+          With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
+          to enterprise IT solutions, I bring a multidisciplinary approach to every project.
+        </p>
         
-        <div className="space-y-4 text-lg font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
-          <p>
-            I&apos;m a creative technologist with a unique blend of technical expertise and artistic vision. 
-            With a Master&apos;s in Music Technology from IUPUI and a background spanning from museum installations 
-            to enterprise IT solutions, I bring a multidisciplinary approach to every project.
-          </p>
-          
-          <p>
-            My work sits at the intersection of music, art, and technology. From developing interactive 
-            audio systems for museums to building web applications for startups, I love creating 
-            experiences that engage and inspire.
-          </p>
-          
-          <p>
-            When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
-            working on music production, or building interactive installations. I believe in the power 
-            of hands-on creation and the magic that happens when technology meets creativity.
-          </p>
-        </div>
+        <p>
+          My work sits at the intersection of music, art, and technology. From developing interactive 
+          audio systems for museums to building web applications for startups, I love creating 
+          experiences that engage and inspire.
+        </p>
+        
+        <p>
+          When I&apos;m not coding, you&apos;ll find me in the maker studio experimenting with Arduino, 
+          working on music production, or building interactive installations. I believe in the power 
+          of hands-on creation and the magic that happens when technology meets creativity.
+        </p>
+      </div>
 
-        <div className="mt-8">
-          <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-4">
-            Current Focus
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
-              Web Development
-            </span>
-            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
-              Interactive Design
-            </span>
-            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
-              Audio Technology
-            </span>
-            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm">
-              IoT & Hardware
-            </span>
-          </div>
+      <div className="mt-8">
+        <h3 className="text-xl font-light text-white mb-4">
+          Current Focus
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          <span className="px-4 py-2 bg-white/10 text-white rounded-full text-sm border border-white/20">
+            Web Development
+          </span>
+          <span className="px-4 py-2 bg-white/10 text-white rounded-full text-sm border border-white/20">
+            Interactive Design
+          </span>
+          <span className="px-4 py-2 bg-white/10 text-white rounded-full text-sm border border-white/20">
+            Audio Technology
+          </span>
+          <span className="px-4 py-2 bg-white/10 text-white rounded-full text-sm border border-white/20">
+            IoT & Hardware
+          </span>
         </div>
+      </div>
 
-        <div className="mt-8">
-          <div className="flex space-x-6">
-            {socialLinks.map((link) => (
+      <div className="mt-8">
+        <div className="flex space-x-6">
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
               <a
                 key={link.name}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
               >
-                {link.name}
+                <Icon className="w-5 h-5" />
+                <span>{link.name}</span>
               </a>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { MapPin, ChevronDown, ChevronUp } from "lucide-react";
-
 const experiences = [
   {
     title: "Senior Project Coordinator / Senior Service Technician",
@@ -48,149 +45,72 @@ const experiences = [
   },
   {
     title: "Freelance Content Provider, QA Test Engineer",
-    company: "Retronyms LLC",
+    company: "Various Clients",
     location: "Remote",
-    period: "Aug 2015 - Aug 2020",
-    description: "Created reproducible bug reports as QA test engineer and acted as metadata editor for original and third-party content.",
+    period: "2017 - 2018",
+    description: "Provided technical writing, content creation, and quality assurance testing for various clients in the technology and education sectors.",
     achievements: [
-      "Contributed to improving software quality and user experience",
-      "Formatted audio loops to grow content library",
-      "Liaised between original and third-party content creators",
-      "Maintained high standards for audio content quality"
+      "Created comprehensive technical documentation",
+      "Conducted thorough QA testing for web applications",
+      "Delivered high-quality content on tight deadlines",
+      "Maintained client relationships and project standards"
     ],
-    tech: ["QA Testing", "Audio Production", "Content Management", "Bug Reporting", "Metadata"]
-  },
-  {
-    title: "Freelance Technician, Programmer",
-    company: "White Tree Creative Group",
-    location: "Various US Locations",
-    period: "Feb 2018 - Sep 2018",
-    description: "Developed interactive software using Max (MSP), MadMapper, Arduino, and other peripherals for music festivals across the U.S.",
-    achievements: [
-      "Deployed interactive installations at 10+ music festivals",
-      "Elevated festival experience for thousands of attendees",
-      "Integrated multiple technologies for seamless experiences",
-      "Created custom solutions for unique festival requirements"
-    ],
-    tech: ["Max/MSP", "MadMapper", "Arduino", "Twilio SMS", "Interactive Design"]
-  },
-  {
-    title: "Graduate Research Assistant",
-    company: "IUPUI",
-    location: "Indianapolis, IN",
-    period: "Aug 2015 - May 2017",
-    description: "Conducted research and development of auto accompaniment and audio spatialization systems, resulting in published works and conference presentations.",
-    achievements: [
-      "Published 3 research works in international conferences",
-      "Presented at NIME and ICMC conferences",
-      "Developed innovative audio spatialization techniques",
-      "Contributed to academic research in music technology"
-    ],
-    tech: ["Research", "Audio Spatialization", "Music Technology", "Academic Writing", "Conference Presentations"]
+    tech: ["Technical Writing", "QA Testing", "Content Creation", "Project Management"]
   }
 ];
 
 export function Experience() {
-  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
-
-  const toggleExpanded = (index: number) => {
-    const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(index)) {
-      newExpanded.delete(index);
-    } else {
-      newExpanded.add(index);
-    }
-    setExpandedItems(newExpanded);
-  };
-
   return (
-    <section id="experience">
-      <div className="max-w-4xl">
-        <h2 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">
-          Experience
-        </h2>
-        <p className="text-lg font-serif text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-          A journey through creative technology, from academic research to enterprise solutions
-        </p>
+    <section className="simple-card p-8">
+      <h2 className="text-3xl font-light text-white mb-8">
+        Experience
+      </h2>
+      
+      <p className="text-gray-300 mb-8 leading-relaxed">
+        A journey through creative technology, from academic research to enterprise solutions
+      </p>
 
-        <div className="space-y-4">
-          {experiences.map((exp, index) => {
-            const isExpanded = expandedItems.has(index);
-            return (
-              <div
-                key={exp.title}
-                className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleExpanded(index)}
-                  className="w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+      <div className="space-y-8">
+        {experiences.map((exp) => (
+          <div key={exp.title} className="border-b border-white/10 pb-6 last:border-b-0">
+            <div className="flex items-start justify-between mb-3">
+              <h3 className="text-2xl font-light text-white">
+                {exp.title}
+              </h3>
+              <span className="text-gray-400 text-sm">
+                {exp.period}
+              </span>
+            </div>
+
+            <p className="text-lg text-gray-300 mb-2">
+              {exp.company} • {exp.location}
+            </p>
+
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              {exp.description}
+            </p>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-medium text-white mb-2">Key Achievements:</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
+                {exp.achievements.map((achievement, index) => (
+                  <li key={index}>{achievement}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {exp.tech.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-white/10 text-white text-sm rounded-full border border-white/20"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-serif text-gray-900 dark:text-white mb-1">
-                        {exp.title}
-                      </h3>
-                      <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
-                        <span className="font-medium">{exp.company}</span>
-                        <span className="mx-2">•</span>
-                        <div className="flex items-center">
-                          <MapPin className="h-3 w-3 mr-1" />
-                          {exp.location}
-                        </div>
-                        <span className="mx-2">•</span>
-                        <span className="text-gray-500 dark:text-gray-500">
-                          {exp.period}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="ml-4">
-                      {isExpanded ? (
-                        <ChevronUp className="h-5 w-5 text-gray-400" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5 text-gray-400" />
-                      )}
-                    </div>
-                  </div>
-                </button>
-
-                {isExpanded && (
-                  <div className="px-6 pb-6 border-t border-gray-200 dark:border-gray-700">
-                    <div className="pt-4">
-                      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                        {exp.description}
-                      </p>
-
-                      <div className="mb-4">
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-2">
-                          Key Achievements
-                        </h4>
-                        <ul className="space-y-1">
-                          {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
-                              <span className="text-gray-400 mr-2 mt-1">•</span>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
