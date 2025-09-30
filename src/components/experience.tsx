@@ -61,8 +61,8 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section className="simple-card p-8">
-      <h2 className="text-3xl font-light text-white mb-8">
+    <section id="experience" className="simple-card p-8 md:p-12">
+      <h2 className="text-4xl font-light text-white mb-8">
         Experience
       </h2>
       

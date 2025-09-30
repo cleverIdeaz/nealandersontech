@@ -22,8 +22,8 @@ export function About() {
   ];
 
   return (
-    <section className="simple-card p-8">
-      <h2 className="text-3xl font-light text-white mb-6">
+    <section id="about" className="simple-card p-8 md:p-12">
+      <h2 className="text-4xl font-light text-white mb-8">
         About
       </h2>
       
