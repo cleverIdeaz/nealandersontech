@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,13 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Neal Anderson – Vibe Coder",
-  description: "Full-Stack Builder | Creative Technologist | Vibe Coder",
-  keywords: ["portfolio", "developer", "full-stack", "creative technologist"],
+  title: "Neal Anderson – Space Portfolio",
+  description: "Creative Technologist | Full-Stack Builder | Floating Card Interface",
+  keywords: ["portfolio", "developer", "full-stack", "creative technologist", "space", "3D", "floating cards"],
   authors: [{ name: "Neal Anderson" }],
   openGraph: {
-    title: "Neal Anderson – Vibe Coder",
-    description: "Full-Stack Builder | Creative Technologist | Vibe Coder",
+    title: "Neal Anderson – Space Portfolio",
+    description: "Creative Technologist | Full-Stack Builder | Floating Card Interface",
     type: "website",
   },
 };
@@ -28,14 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
