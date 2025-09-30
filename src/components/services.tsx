@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Palette, Music, DollarSign, Clock, CheckCircle } from "lucide-react";
+import { Code, Palette, Music, DollarSign, CheckCircle } from "lucide-react";
 
 const services = [
   {

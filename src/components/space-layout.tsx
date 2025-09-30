@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   User, 
   Briefcase, 
@@ -11,7 +11,6 @@ import {
   Music, 
   DollarSign,
   Coffee,
-  X,
   Layers
 } from "lucide-react";
 
@@ -20,7 +19,7 @@ interface CardData {
   id: string;
   title: string;
   subtitle: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   content: React.ReactNode;
   position: { x: number; y: number; z: number; rotation: number };
   size: { width: number; height: number };

@@ -1,10 +1,12 @@
 // API Framework for Floating Card System
+import React from 'react';
+
 export interface CardData {
   id: string;
   title: string;
   subtitle: string;
   icon: string;
-  content: any;
+  content: React.ReactNode;
   position: { x: number; y: number; z: number; rotation: number };
   size: { width: number; height: number };
   metadata?: {
@@ -71,7 +73,7 @@ export class FloatingCardAPI {
         }
       })
     });
-    return response;
+    return response as CardData;
   }
 
   async updateCard(id: string, updates: Partial<CardData>): Promise<CardData> {
@@ -85,7 +87,7 @@ export class FloatingCardAPI {
         }
       })
     });
-    return response;
+    return response as CardData;
   }
 
   async deleteCard(id: string): Promise<void> {
@@ -96,7 +98,7 @@ export class FloatingCardAPI {
 
   async getCards(): Promise<CardData[]> {
     const response = await this.request('/cards');
-    return response;
+    return response as CardData[];
   }
 
   // Stack Management
@@ -108,7 +110,7 @@ export class FloatingCardAPI {
         id: this.generateId()
       })
     });
-    return response;
+    return response as CardStack;
   }
 
   async updateStack(id: string, updates: Partial<CardStack>): Promise<CardStack> {
@@ -116,12 +118,12 @@ export class FloatingCardAPI {
       method: 'PATCH',
       body: JSON.stringify(updates)
     });
-    return response;
+    return response as CardStack;
   }
 
   async getStacks(): Promise<CardStack[]> {
     const response = await this.request('/stacks');
-    return response;
+    return response as CardStack[];
   }
 
   // User Management
@@ -133,7 +135,7 @@ export class FloatingCardAPI {
         id: this.generateId()
       })
     });
-    return response;
+    return response as User;
   }
 
   async updateUser(id: string, updates: Partial<User>): Promise<User> {
@@ -141,18 +143,18 @@ export class FloatingCardAPI {
       method: 'PATCH',
       body: JSON.stringify(updates)
     });
-    return response;
+    return response as User;
   }
 
   async getUser(id: string): Promise<User> {
     const response = await this.request(`/users/${id}`);
-    return response;
+    return response as User;
   }
 
   // Community Features
   async getCommunityMembers(): Promise<CommunityMember[]> {
     const response = await this.request('/community/members');
-    return response;
+    return response as CommunityMember[];
   }
 
   async joinCommunity(userId: string): Promise<CommunityMember> {
@@ -160,13 +162,13 @@ export class FloatingCardAPI {
       method: 'POST',
       body: JSON.stringify({ userId })
     });
-    return response;
+    return response as CommunityMember;
   }
 
   // Template Management
   async getTemplates(): Promise<CardData[]> {
     const response = await this.request('/templates');
-    return response;
+    return response as CardData[];
   }
 
   async createTemplate(card: CardData): Promise<CardData> {
@@ -174,11 +176,11 @@ export class FloatingCardAPI {
       method: 'POST',
       body: JSON.stringify(card)
     });
-    return response;
+    return response as CardData;
   }
 
   // Private helper methods
-  private async request(endpoint: string, options: RequestInit = {}): Promise<any> {
+  private async request(endpoint: string, options: RequestInit = {}): Promise<unknown> {
     const url = `${this.baseUrl}${endpoint}`;
     const headers = {
       'Content-Type': 'application/json',
