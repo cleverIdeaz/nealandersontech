@@ -61,22 +61,22 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="simple-card p-8 md:p-12">
-      <h2 className="text-4xl font-light text-white mb-8">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
         Experience
-      </h2>
+      </h1>
       
-      <p className="text-gray-300 mb-8 leading-relaxed">
+      <p className="text-xl text-gray-300 mb-12 leading-relaxed">
         A journey through creative technology, from academic research to enterprise solutions
       </p>
 
-      <div className="space-y-8">
+      <div className="space-y-12">
         {experiences.map((exp) => (
-          <div key={exp.title} className="border-b border-white/10 pb-6 last:border-b-0">
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-2xl font-light text-white">
+          <div key={exp.title} className="border-b border-white/10 pb-8 last:border-b-0">
+            <div className="flex items-start justify-between mb-4">
+              <h2 className="text-2xl font-light text-white">
                 {exp.title}
-              </h3>
+              </h2>
               <span className="text-gray-400 text-sm">
                 {exp.period}
               </span>
@@ -86,13 +86,13 @@ export function Experience() {
               {exp.company} • {exp.location}
             </p>
 
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               {exp.description}
             </p>
 
-            <div className="mb-4">
-              <h4 className="text-sm font-medium text-white mb-2">Key Achievements:</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
+            <div className="mb-6">
+              <h3 className="text-sm font-medium text-white mb-3">Key Achievements:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-300 text-sm">
                 {exp.achievements.map((achievement, index) => (
                   <li key={index}>{achievement}</li>
                 ))}
@@ -112,6 +112,6 @@ export function Experience() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -26,10 +26,10 @@ const blogPosts = [
 
 export function Blog() {
   return (
-    <section id="blog" className="simple-card p-8 md:p-12">
-      <h2 className="text-4xl font-light text-white mb-8">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
         Writing
-      </h2>
+      </h1>
         
       <p className="text-lg text-gray-300 mb-8 leading-relaxed">
         Thoughts on technology, creativity, and the intersection of code and art. 
@@ -61,6 +61,6 @@ export function Blog() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

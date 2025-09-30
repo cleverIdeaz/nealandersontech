@@ -22,10 +22,10 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="simple-card p-8 md:p-12">
-      <h2 className="text-4xl font-light text-white mb-8">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
         About
-      </h2>
+      </h1>
       
       <div className="space-y-6 text-gray-300 leading-relaxed">
         <p className="text-lg">
@@ -86,6 +86,6 @@ export function About() {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

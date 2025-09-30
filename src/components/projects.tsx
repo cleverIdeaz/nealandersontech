@@ -37,18 +37,18 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="simple-card p-8 md:p-12">
-      <h2 className="text-4xl font-light text-white mb-8">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
         Projects
-      </h2>
+      </h1>
 
-      <div className="space-y-8">
+      <div className="space-y-12">
         {projects.map((project) => (
-          <div key={project.title} className="border-b border-white/10 pb-6 last:border-b-0">
-            <div className="flex items-start justify-between mb-4">
-              <h3 className="text-2xl font-light text-white">
+          <div key={project.title} className="border-b border-white/10 pb-8 last:border-b-0">
+            <div className="flex items-start justify-between mb-6">
+              <h2 className="text-3xl font-light text-white">
                 {project.title}
-              </h3>
+              </h2>
               {project.featured && (
                 <span className="px-3 py-1 bg-white/10 text-white text-sm rounded-full border border-white/20">
                   Featured
@@ -56,27 +56,27 @@ export function Projects() {
               )}
             </div>
 
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               {project.description}
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-3 mb-6">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 bg-white/10 text-white text-sm rounded-full border border-white/20"
+                  className="px-4 py-2 bg-white/10 text-white text-sm rounded-full border border-white/20"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className="flex space-x-6">
+            <div className="flex space-x-8">
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-white hover:text-gray-300 transition-colors font-medium"
               >
                 View Project →
               </a>
@@ -84,7 +84,7 @@ export function Projects() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-white hover:text-gray-300 transition-colors font-medium"
               >
                 GitHub →
               </a>
@@ -92,6 +92,6 @@ export function Projects() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

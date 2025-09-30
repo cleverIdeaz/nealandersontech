@@ -57,10 +57,10 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="simple-card p-8 md:p-12">
-      <h2 className="text-4xl font-light text-white mb-8">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
         Skills
-      </h2>
+      </h1>
       <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-12">
         A diverse toolkit spanning programming, creative technology, and project management
       </p>
@@ -84,6 +84,6 @@ export function Skills() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
